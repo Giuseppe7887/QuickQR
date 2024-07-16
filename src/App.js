@@ -10,8 +10,6 @@ export default function App() {
       <Routes>
         <Route path="/" Component={Main} />
         <Route path="/qr" Component={QrPage} />
-        <Route path="/QuickQR" Component={Main} />
-        <Route path="/QuickQR/qr" Component={QrPage} />
       </Routes>
     </Router>
   );
