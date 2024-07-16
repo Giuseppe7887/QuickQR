@@ -2,7 +2,7 @@
   "name": "QuickQR",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://giuseppe7887.github.io/QuickQR/",
+  "homepage": "https://giuseppe7887.github.io/QuickQR",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",

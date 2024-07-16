@@ -1,15 +1,17 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Main from "./Main";
 import QrPage from "./componenti/QrPage";
 
 
 
-export default function App(){
-  return(
-    <Router>
+export default function App() {
+  return (
+    <Router >
       <Routes>
-        <Route path="/" Component={Main}/>
-        <Route path="/qr" Component={QrPage}/>
+        <Route path="/" Component={Main} />
+        <Route path="/qr" Component={QrPage} />
+        <Route path="/QuickQR" Component={Main} />
+        <Route path="/QuickQR/qr" Component={QrPage} />
       </Routes>
     </Router>
   );
