@@ -1,0 +1,141 @@
+* {
+    padding: none;
+    margin: none;
+    border: none;
+}
+
+#container {
+    width: 100vw;
+    height: 100vh;
+    padding: 2.5%;
+    display: grid;
+    grid-template-columns:1fr 1fr;
+  
+}
+
+.card {
+    cursor: pointer;
+    margin-right: 20px;
+    width: 80%;
+    height: 300px;
+    border: solid 1px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.qrContainer {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.body {
+    border-top: rgb(188, 184, 184) 1px solid;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.placeh .body{
+    color: grey;
+}
+
+.placeh{
+    border: dotted grey;
+    transition: all .2s;
+}
+.placeh:hover{
+   transform: scale(105%);
+   
+}
+
+
+
+@media print {
+    #main {
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    #container {
+        display: none !important;
+    }
+
+    button {
+        display: none !important;
+    }
+
+    #printContainer {
+        width: 100% !important;
+    }
+
+    form {
+        width: 100% !important;
+    }
+
+    b {
+        display: none;
+    }
+}
+
+
+
+@page {
+    size: auto;
+    margin: 0;
+}
+
+
+@media screen and (max-width:600px) {
+
+    #container {
+        width: 100vw;
+        height: 100vh;
+        padding: 2.5%;
+        display: grid;
+        grid-template-columns:1fr;
+      
+    }
+    
+}
+@media screen and (min-width:1000px) {
+
+    #container {
+        width: 100vw;
+        height: 100vh;
+        padding: 2.5%;
+        display: grid;
+        grid-template-columns:1fr 1fr 1fr;
+    }
+
+}
+@media screen and (min-width:1500px) {
+
+    #container {
+        width: 100vw;
+        height: 100vh;
+        padding: 2.5%;
+        display: grid;
+        grid-template-columns:1fr 1fr 1fr 1fr;
+    }
+
+}
+@media screen and (min-width:2000px) {
+
+    #container {
+        width: 100vw;
+        height: 100vh;
+        padding: 2.5%;
+        display: grid;
+        grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+    }
+
+}
