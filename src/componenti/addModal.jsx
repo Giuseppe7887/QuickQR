@@ -16,8 +16,8 @@ function AddModal(props) {
   // style
   let [style, setStyle] = useState("squares");
   let [level, setLevel] = useState("L");
-  let [bg, setBg] = useState("white");
-  let [fg, setFg] = useState("black");
+  let [bg, setBg] = useState("#ffffff");
+  let [fg, setFg] = useState("#000000");
 
   // ! IL SALVATAGGIO DEVE ESSERE UN OGGETTO OPPURE UNA STRINGA
   // ? DEVE CONTENERE I PARAMETRI
@@ -28,8 +28,8 @@ function AddModal(props) {
 
   function carica() {
     if (!link || link === null || link === "")
-      return setError("Campo obbligatorio");
-    if (!URL_REGEX.test(link)) return setError("Link non valido");
+      return setError("Field Required");
+    if (!URL_REGEX.test(link)) return setError("Not Valid Link");
 
     let id = `QR-${uuid()}`;
 
@@ -69,11 +69,12 @@ function AddModal(props) {
 
   function reset(){
     setLink("");
-    setBg("white");
-    setFg("black")
+    setBg("#ffffff");
+    setFg("#000000")
     setLevel("L");
     setStyle("squares");
     setValidQR(false);
+    setError("")
   }
 
   return (
@@ -92,6 +93,7 @@ function AddModal(props) {
         >
           <Form.Group>
             <Form.Control
+            autoFocus
               onFocus={() => setError("")}
               style={{
                 borderColor: error !== "" && "red",

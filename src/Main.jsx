@@ -44,25 +44,24 @@ function Main() {
     setAddModalShow(true);
   }
 
-  function showAlert(stato, messaggio, timeout = 1000) {
+  function showAlert(stato, messaggio, timeout = 2000) {
+    if(alertData.visible) return;
     setAlertData({
       visible: true,
       messaggio: messaggio,
-      stato: stato,
+      stato: stato.toUpperCase(),
     });
 
-    setTimeout(() => {
-      setAlertData({ visible: false });
       setTimeout(() => {
-        setAlertData({ ...alertData, messaggio: "", stato: "" });
-      }, timeout + 1000);
+        setAlertData({ visible:false, messaggio: "", stato: "" });
     }, timeout);
+    
   }
 
   function remove(id) {
     window.localStorage.removeItem(id);
     fetchQR();
-    showAlert("success", "Deleted");
+    showAlert("SUCCESS", "Deleted");
   }
 
   function downloadQRCode(id) {
@@ -84,6 +83,8 @@ function Main() {
       data:url
     })
   }
+
+  
 
   return (
     <>
@@ -192,7 +193,7 @@ function Main() {
         show={alertData.visible}
       />
 
-      <SimpleModal visible={SimpleModalData.visible} link={SimpleModalData.data} close={()=>setSimpleModalData({...SimpleModalData,visible:false})}/>
+      <SimpleModal showAlert={showAlert} visible={SimpleModalData.visible} link={SimpleModalData.data} close={()=>setSimpleModalData({...SimpleModalData,visible:false})}/>
     </>
   );
 }
