@@ -1,36 +1,37 @@
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
-function SimpleModal({ visible, close, link,showAlert }) {
+function SimpleModal({ visible, close, link, showAlert }) {
 
 
-async  function copy() {
+  async function copy() {
     // Get the text field
     // var copyText = document.getElementById("myInput");
-  
+
     // // Select the text field
     // copyText.select();
     // copyText.setSelectionRange(0, 99999); // For mobile devices
-  
-     // Copy the text inside the text field
+
+    // Copy the text inside the text field
     // window.navigator.clipboard.write(link);
 
 
-    try{
+    try {
       if ('clipboard' in navigator) {
-        navigator.clipboard.writeText(link).then(res=>{
+        navigator.clipboard.writeText(link).then(res => {
 
-        }).catch(err=>showAlert("ERROR","Someting went wrong"))
+        }).catch(err => showAlert("ERROR", "Someting went wrong"))
       } else {
-         document.execCommand('copy', true, link);
-  
+        document.execCommand('copy', true, link);
+
       }
-      showAlert("SUCCESS","Copied");
-    }catch(err){
-      showAlert("ERROR","Someting went wrong");
+      showAlert("SUCCESS", "Copied");
+    } catch (err) {
+      showAlert("ERROR", "Someting went wrong");
     }
- 
-  
+
+
     // Alert the copied text
   }
 
@@ -51,24 +52,14 @@ async  function copy() {
         <a href={link} target="_blank">
           <Button variant="success">Open Url</Button>
         </a>
-        <Button onClick={()=>{
-          copy();
-          return;
-          try{
-            window.navigator.clipboard.writeText(link).then(()=>{
-              showAlert("SUCCESS","Link copied in clipboard");
-             }).catch(err=>{
-               showAlert("ERROR","Someting went wrong");
-             })
-          }catch(err){
-            showAlert("ERROR","Someting went wrong");
-          }
-         
-        }} style={{background:"orange",border:"none"}}>
-          Copy
-        </Button>
+        <CopyToClipboard text={link} onCopy={()=>showAlert("SUCCESS","Copied in clipboard")}>
+          <Button style={{ background: "orange", border: "none" }}>
+            Copy
+          </Button>
+        </CopyToClipboard>
+
       </Modal.Footer>
-    </Modal>
+    </Modal >
   );
 }
 
