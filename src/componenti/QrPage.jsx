@@ -17,7 +17,6 @@ function QrPage() {
   const download = searchParams.get("download") || "false";
 
   useEffect(() => {
-    alert(bg)
     if (download === "true") {
       let canvas = document.querySelector("canvas");
 

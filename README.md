@@ -10,7 +10,7 @@
 ```In this section you can create, customize and download QR codes```
 
 
-## 2 SHARE QR https://giuseppe7887.github.io/QuickQR/#qr
+## 2 SHARE QR https://giuseppe7887.github.io/QuickQR/#qr?ref=google.com
 
 ### URL PARAMS
 
