@@ -10,8 +10,8 @@ function QrPage() {
   //params
   const [searchParams] = useSearchParams();
   const code = searchParams.get("ref") || "";
-  const bg = searchParams.get("bg") || "white";
-  const fg = searchParams.get("fg") || "black";
+  const bg = searchParams.get("bg") || "ffffff";
+  const fg = searchParams.get("fg") || "000000";
   const style = searchParams.get("style") || "squares";
   const size = searchParams.get("size") || 300;
   const download = searchParams.get("download") || "false";
