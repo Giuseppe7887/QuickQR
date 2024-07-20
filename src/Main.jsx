@@ -77,7 +77,7 @@ function Main() {
 
   function share(x){
     const base = "https://giuseppe7887.github.io/QuickQR"
-    const url = `${base}/#qr?ref=${x?.link}&bg=${x?.bg.replace("#","")}&fg=${x?.fg.replace("#","")}&size=200&download=false`;
+    const url = `${base}/#qr?ref=${x?.link}&bg=${x?.bg.replace("#","")}&fg=${x?.fg.replace("#","")}&size=200&style=${x?.style}&download=false`;
     setSimpleModalData({
       visible:true,
       data:url
