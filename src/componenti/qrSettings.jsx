@@ -33,6 +33,7 @@ function QrSettings({ url, bg, fg, style, level, changeState }) {
               name="qr-fg"
               id="qr-fg"
               type="color"
+              value={fg}
             />
           </FormGroup>
           <FormGroup style={{ display: "flex",marginBottom:15}}>
@@ -46,6 +47,7 @@ function QrSettings({ url, bg, fg, style, level, changeState }) {
               name="qr-bg"
               id="qr-bg"
               type="color"
+              value={bg}
             />
           </FormGroup>
           <FormGroup style={{ display: "flex",marginBottom:15}}>

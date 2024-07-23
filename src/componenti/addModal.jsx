@@ -67,7 +67,7 @@ function AddModal(props) {
     }
   }
 
-  function reset(){
+  function reset() {
     setLink("");
     setBg("#ffffff");
     setFg("#000000")
@@ -79,7 +79,7 @@ function AddModal(props) {
 
   return (
     <Modal {...props} show={props.show} centered={true} size="lg">
-      <Modal.Header onClick={(e)=>{
+      <Modal.Header onClick={(e) => {
         e.preventDefault();
         reset()
         props.onHide()
@@ -93,7 +93,7 @@ function AddModal(props) {
         >
           <Form.Group>
             <Form.Control
-            autoFocus
+              autoFocus
               onFocus={() => setError("")}
               style={{
                 borderColor: error !== "" && "red",
