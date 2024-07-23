@@ -102,7 +102,7 @@ function AddModal(props) {
               type="text"
               placeholder="insert link"
               onChange={(e) => {
-                setLink(e.target.value.toString().trim().toLowerCase());
+                setLink(e.target.value.toString().trim());
                 setValidQR(URL_REGEX.test(e.target.value));
               }}
             />
